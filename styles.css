@@ -1,0 +1,120 @@
+html {
+padding: 0;
+margin: 0;
+scroll-behavior: smooth;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #D5D9DE;
+    color: #081526;
+    font-family: Ubuntu, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav {
+    background-color: #081526;
+    padding: 7px 0 ;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.logo { 
+    height: auto;
+    width: 90px;
+    margin: 0 auto;
+    display: block; }
+
+.Hero {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    height: 100vh;
+    background-color: #3B4956;
+    align-items: center;
+    color: #D5D9DE;
+    animation: 
+        fadeTitle  ease-in-out forwards;
+        animation-timeline: scroll(root block);
+        animation-range: 0% 17%;
+}
+@keyframes fadeTitle {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.entry-title {
+    font-size: 3rem;
+    margin-bottom: 130px; 
+}
+
+.container-animation {
+    height: 60vh; 
+}
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    height: 200px;
+    z-index: -2;
+}
+.square {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    background-color: #3498db;
+    animation: 
+        fadeIn ease-in-out forwards, 
+        align ease-in-out forwards;
+    animation-timeline: scroll(root block);    
+    animation-range: 10% 40%, 45% 55%;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+     }
+    to { 
+        opacity: 1;
+     }
+}
+@keyframes align {
+    from { left: 50%; }
+    to { left: calc(100% * var(--square-index) / 4); }
+}
+
+footer {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #3B4956;
+    align-items: center;
+    color: #D5D9DE;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    z-index: 2;
+    animation: revealFooter ease-in-out forwards;
+    animation-timeline: scroll(root);
+    animation-range: 70% 100%;
+}
+
+@keyframes revealFooter {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
