@@ -123,12 +123,9 @@ footer {
     }
 }
 .footer-links {
-    display: flex;
-    width: 40vw;
-    justify-content: space-around;
-    align-items: center;
+    padding-top: 5rem;
+    border-top: solid 1px #4686c1;
     height: 10vh;
-    margin-top: 2rem;
     font-size: 0.8rem;
 }
 .footer-links a {
